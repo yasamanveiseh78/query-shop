@@ -2,8 +2,10 @@ import { useState } from "react";
 import { useProducts } from "../../hooks/useProducts";
 import ProductCard from "../../components/products/ProductCard/ProductCard";
 import CategoryButtons from "../../components/products/CategoryButtons/CategoryButtons";
+import EmptyState from "../../components/Common/EmptyState/EmptyState";
 
-function Products() {
+
+function Products({ searchText }) {
   const [selectedCategory, setSelectedCategory] = useState("all");
 
   const { data, isLoading, isError, error } = useProducts();
@@ -20,29 +22,36 @@ function Products() {
     selectedCategory === "all"
       ? data
       : data.filter((product) => product.category === selectedCategory);
+  const searchedProducts = filteredProducts.filter((product) =>
+    product.title.toLowerCase().includes(searchText.toLowerCase().trim()),
+  );
 
- return (
-  <div className="mx-auto max-w-306 px-4 sm:px-6 lg:px-8 lg:pb-8">
-    <section
-      id="product-list-container"
-      className="mt-8 flex flex-col-reverse items-start justify-between gap-6 lg:flex-row"
-    >
-      <div
-        id="product-list"
-        className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 lg:w-4/5 xl:grid-cols-3"
+  return (
+    <div className="mx-auto max-w-306 px-4 sm:px-6 lg:px-8 lg:pb-8">
+      <section
+        id="product-list-container"
+        className="mt-8 flex flex-col-reverse items-start justify-between gap-6 lg:flex-row"
       >
-        {filteredProducts.map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
-      </div>
+        <div
+          id="product-list"
+          className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 lg:w-4/5 xl:grid-cols-3"
+        >
+          {searchedProducts.length > 0 ? (
+            searchedProducts.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))
+          ) : (
+            <EmptyState />
+          )}
+        </div>
 
-      <CategoryButtons
-        selectedCategory={selectedCategory}
-        setSelectedCategory={setSelectedCategory}
-      />
-    </section>
-  </div>
-);
+        <CategoryButtons
+          selectedCategory={selectedCategory}
+          setSelectedCategory={setSelectedCategory}
+        />
+      </section>
+    </div>
+  );
 }
 
 export default Products;

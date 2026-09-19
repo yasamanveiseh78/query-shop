@@ -5,13 +5,21 @@ import Products from "../pages/Products/Products";
 
 import Cart from "../pages/Cart/Cart";
 import ProductDetails from "../pages/productDetails/ProductDetails";
+import Header from "../components/layout/Header/Header";
+import { useState } from "react";
 
 function AppRoutes() {
+  const [searchText, setSearchText] = useState("");
+
   return (
     <BrowserRouter>
+      <Header searchText={searchText} setSearchText={setSearchText} />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/products" element={<Products />} />
+        <Route
+          path="/products"
+          element={<Products searchText={searchText} />}
+        />
         <Route path="/products/:id" element={<ProductDetails />} />
         <Route path="/cart" element={<Cart />} />
       </Routes>

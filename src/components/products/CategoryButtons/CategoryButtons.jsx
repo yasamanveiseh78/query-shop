@@ -8,7 +8,7 @@ function CategoryButtons({ selectedCategory, setSelectedCategory }) {
   ];
 
   return (
-    <div className="static flex h-fit w-full flex-col rounded-[10px] bg-[#ebe4db] p-2.5 shadow-[0_0_8px_rgba(75,63,56,0.08)] lg:sticky lg:top-8 lg:w-1/5">
+    <div className="static flex h-fit w-full flex-col rounded-[10px] bg-[#ebe4db] p-2.5 shadow-[0_0_8px_rgba(75,63,56,0.08)] lg:sticky lg:top-24 lg:w-1/5">
       <h3 className="mb-2 mt-2 border-b border-[#cfc3b8] pb-3 text-xl text-[#234a33]">
         Categories
       </h3>
