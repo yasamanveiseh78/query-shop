@@ -4,8 +4,7 @@ import ProductCard from "../../components/products/ProductCard/ProductCard";
 import CategoryButtons from "../../components/products/CategoryButtons/CategoryButtons";
 import EmptyState from "../../components/Common/EmptyState/EmptyState";
 
-
-function Products({ searchText }) {
+function Products({ searchText, setSearchText }) {
   const [selectedCategory, setSelectedCategory] = useState("all");
 
   const { data, isLoading, isError, error } = useProducts();
@@ -48,6 +47,7 @@ function Products({ searchText }) {
         <CategoryButtons
           selectedCategory={selectedCategory}
           setSelectedCategory={setSelectedCategory}
+          setSearchText={setSearchText}
         />
       </section>
     </div>

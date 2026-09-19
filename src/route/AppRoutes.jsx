@@ -18,7 +18,9 @@ function AppRoutes() {
         <Route path="/" element={<Home />} />
         <Route
           path="/products"
-          element={<Products searchText={searchText} />}
+          element={
+            <Products searchText={searchText} setSearchText={setSearchText} />
+          }
         />
         <Route path="/products/:id" element={<ProductDetails />} />
         <Route path="/cart" element={<Cart />} />

@@ -1,4 +1,8 @@
-function CategoryButtons({ selectedCategory, setSelectedCategory }) {
+function CategoryButtons({
+  selectedCategory,
+  setSelectedCategory,
+  setSearchText,
+}) {
   const categories = [
     "all",
     "electronics",
@@ -17,7 +21,10 @@ function CategoryButtons({ selectedCategory, setSelectedCategory }) {
         <button
           key={category}
           type="button"
-          onClick={() => setSelectedCategory(category)}
+          onClick={() => {
+            setSelectedCategory(category);
+            setSearchText("");
+          }}
           className={`mb-1 w-full rounded-[10px] px-2 py-3 text-left text-base transition ${
             selectedCategory === category
               ? "bg-[#366648] font-bold text-[#fffaf5]"
