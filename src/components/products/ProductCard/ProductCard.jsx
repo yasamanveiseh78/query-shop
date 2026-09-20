@@ -1,6 +1,8 @@
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../../features/cart/cartSlice";
 function ProductCard({ product }) {
   const { id, image, title, price } = product;
-
+  const dispatch = useDispatch();
   return (
     <div
       data-id={id}
@@ -19,13 +21,12 @@ function ProductCard({ product }) {
       </h3>
 
       <div className="mt-auto flex flex-wrap items-center justify-between pt-4">
-        <p className="text-lg font-bold text-[#c23a5c]">
-          ${price}
-        </p>
+        <p className="text-lg font-bold text-[#c23a5c]">${price}</p>
 
         <button
           type="button"
           data-id={id}
+          onClick={() => dispatch(addToCart(product))}
           className="rounded-[10px] bg-[#366648] px-4 py-1.5 text-base text-[#fffaf5] transition-all duration-200 ease-in-out hover:-translate-y-0.5 hover:bg-[#d9486b] active:bg-[#c23a5c]"
         >
           Add to Cart
