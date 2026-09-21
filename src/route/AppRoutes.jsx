@@ -7,6 +7,7 @@ import Cart from "../pages/Cart/Cart";
 import ProductDetails from "../pages/productDetails/ProductDetails";
 import Header from "../components/layout/Header/Header";
 import { useState } from "react";
+import NotFound from "../pages/NotFound/Notfound";
 
 function AppRoutes() {
   const [searchText, setSearchText] = useState("");
@@ -24,6 +25,7 @@ function AppRoutes() {
         />
         <Route path="/products/:id" element={<ProductDetails />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );

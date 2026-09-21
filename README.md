@@ -1,16 +1,59 @@
-# React + Vite
+<div dir="rtl">
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+# Query Shop
 
-Currently, two official plugins are available:
+یک پروژه فروشگاهی با React با هدف تمرین **معماری و ساختار اصولی پروژه** و تقویت مفاهیم تکمیلی React و ابزارهای مرتبط با آن.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## هدف پروژه
 
-## React Compiler
+تمرکز اصلی پروژه روی:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* ساختاردهی و معماری مناسب پروژه
+* جداسازی مسئولیت‌ها
+* مدیریت State در React
+* مدیریت State سراسری با Redux Toolkit
+* مدیریت Data Fetching با TanStack Query
+* کار با Routing و Custom Hooks
+* پیاده‌سازی یک پروژه قابل توسعه و نزدیک به ساختار پروژه‌های واقعی
 
-## Expanding the Oxlint configuration
+## تکنولوژی‌ها
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+* React
+* Redux Toolkit
+* TanStack Query
+* React Router
+* Tailwind CSS
+* SweetAlert2
+* Vite
+* JavaScript
+* Fake Store API
+
+## قابلیت‌ها
+
+* نمایش و جستجوی محصولات
+* فیلتر بر اساس دسته‌بندی
+* صفحه جزئیات محصول
+* افزودن و مدیریت محصولات در سبد خرید
+* محاسبه تعداد و قیمت محصولات
+* ذخیره سبد خرید در Local Storage
+* مدیریت Loading و Error
+* صفحه 404
+* طراحی Responsive
+
+## ساختار پروژه
+
+```text
+src/
+├── app/
+├── components/
+├── features/
+├── hooks/
+├── pages/
+├── route/
+├── services/
+├── App.jsx
+├── main.jsx
+└── index.css
+```
+
+</div>

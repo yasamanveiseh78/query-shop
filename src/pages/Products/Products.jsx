@@ -3,6 +3,8 @@ import { useProducts } from "../../hooks/useProducts";
 import ProductCard from "../../components/products/ProductCard/ProductCard";
 import CategoryButtons from "../../components/products/CategoryButtons/CategoryButtons";
 import EmptyState from "../../components/Common/EmptyState/EmptyState";
+import Loader from "../../components/Common/Loader/Loader";
+
 
 function Products({ searchText, setSearchText }) {
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -10,7 +12,7 @@ function Products({ searchText, setSearchText }) {
   const { data, isLoading, isError, error } = useProducts();
 
   if (isLoading) {
-    return <h2 className="my-4 text-center">Loading...</h2>;
+    return <Loader />;
   }
 
   if (isError) {
