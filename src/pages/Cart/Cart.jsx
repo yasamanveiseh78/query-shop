@@ -9,7 +9,7 @@ import {
   selectCartTotalPrice,
 } from "../../features/cart/cartSelector";
 
-import CartItem from "../../components/cart/CartItem/CartItem";
+import CartItem from "../../components/Cart/CartItem/CartItem";
 
 function Cart() {
   const cartItems = useSelector(selectCartItems);
